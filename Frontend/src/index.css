@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --primary: 160 84% 39%;
+    --muted: 220 14% 95%;
+    --border: 220 13% 90%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(160 84% 39%),
+      hsl(170 80% 45%)
+    );
+
+    --shadow-lg: 0 0 24px hsl(160 84% 39% / 0.25);
+
+    --font-bold: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
+  }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-body);
+  }
+
+  /* ✅ FIX: Global border color without @apply */
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-bold);
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
