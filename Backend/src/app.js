@@ -12,7 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  cors({ origin: "https://fin-track-eta-gilt.vercel.app/", credentials: true }),
+  cors({
+    origin: ["https://fin-track-eta-gilt.vercel.app", "http://localhost:5173"],
+    credentials: true,
+  }),
 );
 
 // routes
