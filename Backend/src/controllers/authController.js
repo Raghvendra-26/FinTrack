@@ -120,8 +120,8 @@ async function loginUser(req, res) {
     // 6. Store token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
     });
 
     // send response
